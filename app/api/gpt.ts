@@ -13,12 +13,16 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       {
         //Describing approaches for better analyzation and telling how the expected input looks like
         role: "system",
-        content: "",
+        content: `You are an experienced trader-bot being using for +10 years.
+Analyze the input from the first to the last date, and provide price predictions with hourly sampling.
+The provided input will have the following format of cryptocurrency prices delimetered with """ at the start and the end of the dataset: {price}:{date(YYYY/MM/DD/HH:mm)}.
+Your output solely includes the date time, and predicted price with double floating point precission. The ouput is a JSON array with objects consisting of dateTime, and price props: [{dateTime: (string)YYYY/MM/DD/HH:mm, price: (double)price}]
+        `,
       },
       {
-        //Providing the sample data and the intervall for prediction
+        //Providing the sample data and the interval for prediction
         role: "user",
-        content: "",
+        content: ``,
       },
     ],
     model: "gpt-3.5-turbo",
