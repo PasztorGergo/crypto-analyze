@@ -60,7 +60,7 @@ export default async function handler(
       },
     ],
     model: "gpt-3.5-turbo",
-    temperature: 0.75,
+    temperature: 1.1,
   });
 
   const data = (await chatCompletition).choices[0].message.content?.replaceAll(
