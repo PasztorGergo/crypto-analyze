@@ -26,7 +26,7 @@ export const Interface = () => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
-    fetch("/api/predict/", {
+    fetch("/api/predict", {
       method: "POST",
       body: JSON.stringify({ symbol }),
     })

@@ -2,7 +2,10 @@ import { Interval, RestMarketTypes, Spot } from "@binance/connector-typescript";
 import { NextApiRequest, NextApiResponse } from "next";
 import OpenAI from "openai";
 
-export async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method != "POST") {
     res.status(403).send("Wrong method");
     return;
